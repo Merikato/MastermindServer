@@ -74,7 +74,11 @@ public class MMServerSession {
                 // read packet from user.
                 byte[] colorMessage = mmPacket.readPacket();
                 System.out.println("received packet: "+ Arrays.toString(colorMessage));
-                //check if msg is color     
+                //check if msg is color 
+                if(colorMessage[0] == 0x22){ // checks if user sent the newgame/endgame message
+                    gameOver = true;
+                    break;
+                }
 
                 int colorRange = setColour(colorMessage[0]);
                 if(colorRange != -1)
