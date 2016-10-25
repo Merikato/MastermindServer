@@ -76,6 +76,7 @@ public class MMServerSession {
                 System.out.println("received packet: "+ Arrays.toString(colorMessage));
                 //check if msg is color 
                 if(colorMessage[0] == 0x22){ // checks if user sent the newgame/endgame message
+                    System.out.println("new game -- server");
                     gameOver = true;
                     break;
                 }
@@ -191,13 +192,13 @@ public class MMServerSession {
                 clueList.add(1);
             }
         }
-        System.out.println("ARRAY   "+Arrays.toString(cloneAnswerSet));
-        System.out.println("LIST\t" + clueList);
+        //System.out.println("ARRAY   "+Arrays.toString(cloneAnswerSet));
+        //System.out.println("LIST\t" + clueList);
         for(int guess=0;guess < 4;guess++)
         {
             for(int ans=0;ans<4;ans++)
             {                            
-                System.out.println("guess  " + guess + " ans  " + ans);
+                //System.out.println("guess  " + guess + " ans  " + ans);
 
                     if(answerSet[guess] == cloneAnswerSet[ans] && cloneAnswerSet[guess] != -2)
                     {
@@ -207,7 +208,7 @@ public class MMServerSession {
                     }
                 }
             }
-                        System.out.println("array " + Arrays.toString(cloneAnswerSet) );
+                        //System.out.println("array " + Arrays.toString(cloneAnswerSet) );
 
         while(clueList.size() < 4){
             clueList.add(11);
