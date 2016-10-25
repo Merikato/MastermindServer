@@ -68,6 +68,13 @@ public class MMPacket {
     public void writePacket(byte[] bytes)throws IOException{
         out.write(bytes);
     }
+    /**
+     * closes the client socket.
+     * @throws IOException 
+     */
+    public void closeSocket() throws IOException{
+        this.clientSocket.close();
+    }
     
     
 }

@@ -42,6 +42,7 @@ public class MMServer {
                 //send an OK message to draw board
                 Session = new MMServerSession(mmp);
                 Session.action();
+                client_socket.close();
             }          
         }
     }
